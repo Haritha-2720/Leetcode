@@ -1,17 +1,27 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
 
-        int[] mapp =new int[2];
-        mapp[0] = mapp[1]= -1;
-        for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
+        int n =nums.length;
+
+        int [] arr = new int[2];
+
+        arr[0] = -1;
+        arr[1]=-1;
+
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+
                 if(nums[i]+nums[j]==target){
-                    mapp[0] =i;
-                    mapp[1] =j;
+
+                    arr[0]=i;
+                    arr[1]=j;
+
                 }
+
             }
         }
-        return mapp;
+
+        return arr;
         
     }
 }
