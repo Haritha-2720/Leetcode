@@ -1,15 +1,24 @@
 class Solution {
     public int maxSubArray(int[] nums) {
-        int maxCurrent = nums[0];
-        int maxGlobal = nums[0];
-        
-        for (int i = 1; i < nums.length; i++) {
-            maxCurrent = Math.max(nums[i], maxCurrent + nums[i]);
-            if (maxCurrent > maxGlobal) {
-                maxGlobal = maxCurrent;
+
+        int n =nums.length;
+
+        int maxi=Integer.MIN_VALUE;
+
+        int sum=0;
+
+        for(int i=0;i<n;i++){
+
+            sum=sum+nums[i];
+
+            if(sum>maxi){ 
+                maxi=sum;
+            }
+            if(sum<0){
+                sum=0;
             }
         }
-        
-        return maxGlobal;
+        return maxi;
     }
 }
+
